@@ -81,16 +81,20 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'diploma_db',
-        'USER': 'postgres',
-        'PASSWORD': '12345678',
-        'HOST': 'localhost',
-        'POST': '',
-        'client_encoding': 'UTF8',
-        'default_transaction_isolation': 'read committed',
-        'timezone':
-            {'USE_TZ': False}
+        'ENGINE' : 'django.db.backends.mysql',
+        'USER' : 'root',
+        'PASSWORD':'',
+        'NAME' : 'diploma',
+        'HOST' : 'localhost',
+        'PORT' : '3306',
+        'OPTIONS':{
+            'init_command':"SET sql_mode = 'STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4',
+        },
+        'TEST':{
+            'CHARSET': 'utf0mb4',
+            'COLLATION': 'utf8mb4_unicode_ci',
+        }
     }
 }
 
